@@ -1,11 +1,16 @@
-# اگر پروژه خالی داری و هیچ چیز نداری:
-mkdir my-project && cd my-project
-npm init -y
-npm install next react react-dom
-
-# ساخت پوشه‌ها
-mkdir pages public
-echo "export default function Home() { return <h1>Hello World</h1> }" > pages/index.js
-
-# ساخت package.json مناسب
-jq '.scripts.build = "next build" | .scripts.dev = "next dev" | .scripts.start = "next start"' package.json > tmp.json && mv tmp.json package.json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  }
+}
